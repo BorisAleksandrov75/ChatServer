@@ -15,7 +15,6 @@ public class ChatServer implements TCPConnectoinListner {
         try(ServerSocket serverSocket = new ServerSocket(1234) ) {
             while (true) {
                 try {
-                    System.out.println(serverSocket.getInetAddress());
                     new TCPconnection(serverSocket.accept(), this);
                 } catch (IOException e) {
                     System.out.println("TCPConnection " + e);
